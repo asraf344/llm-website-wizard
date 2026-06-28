@@ -12,7 +12,7 @@ if not api_key:
     print("No API key was found - please head over to the troubleshooting notebook in this folder to identify & fix!")
 
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
-
+gemini = OpenAI(base_url=GEMINI_BASE_URL, api_key=api_key)
 
 system_prompt = """
 You are a snarky assistant that analyzes the contents of a website,
@@ -27,7 +27,6 @@ If it includes news or announcements, then summarize these too.
 
 """
 
-gemini = OpenAI(base_url=GEMINI_BASE_URL, api_key=api_key)
 
 def messages_for(website):
     """Create message list for the LLM."""
