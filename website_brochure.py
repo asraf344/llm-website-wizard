@@ -84,6 +84,7 @@ def select_relevant_links(url):
     links = json.loads(result)
     return links
 
+
 def create_brochure(company_name, url):
     response = gemini.chat.completions.create(
         model=MODEL,
@@ -92,7 +93,7 @@ def create_brochure(company_name, url):
             {"role": "user", "content": get_brochure_user_prompt(company_name, url)}
         ],
     )
-    print(response.choices[0].message.content)
+    return response.choices[0].message.content
 
 
 def main():

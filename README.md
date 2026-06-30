@@ -25,3 +25,9 @@ $ uv run  website-summary.py
 $ uv run  website-brochure.py   
 ```
 
+# Gradio Front
+- To get the front page using gradio, use:
+
+```
+$ uv run front.py
+```
